@@ -8,7 +8,9 @@ thres = 0.85
 canvas = np.random.uniform(size=canvasShape)
 canvas = np.where(canvas >= thres, 1, 0)
 
+window_name = 'Conways Game of Life'
 
+cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
 
 def conwayRules(center, _sum):
     sumSurrounding = _sum
@@ -51,7 +53,7 @@ while True:
 
 
 
-    cv2.imshow('Conways Game of Life',canvasToShow)
+    cv2.imshow(window_name,canvasToShow)
     if cv2.waitKey(25) & 0xFF == ord('q'):
         break
     if cv2.waitKey(25) & 0xFF == ord('r'):
